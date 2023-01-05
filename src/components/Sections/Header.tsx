@@ -3,6 +3,7 @@ import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 import {SectionId, SectionIdProps} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
@@ -125,9 +126,9 @@ const NavItem: FC<{
   onClick?: () => void;
 }> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   return (
-    <Link to={`/#${section}`} className={classNames(current ? activeClass : inactiveClass)} key={section} onClick={onClick}>
-        {section}
-    </Link>
+    <HashLink smooth to={`/#${section}`} className={classNames(current ? activeClass : inactiveClass)} key={section} onClick={onClick}>
+      {section}
+    </HashLink>
   );
 });
 
