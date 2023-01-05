@@ -12,7 +12,7 @@ const Hero = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Hero}>
       <div
-        className="relative flex h-screen w-screen items-center justify-center"
+        className="relative flex h-screen w-full items-center justify-center"
         style={{
           backgroundImage: `url(${imageSrc})`,
           backgroundSize: "cover",
