@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {FC, memo, UIEventHandler, useCallback, useEffect, useRef, useState} from 'react';
 
 import {isApple, isMobile} from '../../config';
 import {SectionId, testimonial} from '../../data/data';
-import {Testimonial} from '../../data/dataDef';
+import {TestimonialProps} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
@@ -20,11 +20,6 @@ const Testimonials: FC = memo(() => {
   const {width} = useWindow();
 
   const {imageSrc, testimonials} = testimonial;
-
-  const resolveSrc = useMemo(() => {
-    if (!imageSrc) return undefined;
-    return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
-  }, [imageSrc]);
 
   // Mobile iOS doesn't allow background-fixed elements
   useEffect(() => {
@@ -77,7 +72,7 @@ const Testimonials: FC = memo(() => {
           parallaxEnabled && 'bg-fixed',
           {'bg-neutral-700': !imageSrc},
         )}
-        style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
+        style={imageSrc ? {backgroundImage: `url(${imageSrc}`} : undefined}>
         <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
             <div
@@ -113,7 +108,7 @@ const Testimonials: FC = memo(() => {
   );
 });
 
-const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
+const Testimonial: FC<{testimonial: TestimonialProps; isActive: boolean}> = memo(
   ({testimonial: {text, name, image}, isActive}) => (
     <div
       className={classNames(
@@ -123,7 +118,7 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
           <QuoteIcon className="absolute -top-2 -left-2 h-4 w-4 stroke-black text-white" />
-          <img className="h-full w-full rounded-full" src={image} />
+          <img className="h-full w-full rounded-full" src={image} alt="Referrer headshot" />
         </div>
       ) : (
         <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />

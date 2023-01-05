@@ -1,19 +1,19 @@
-import {NextPage} from 'next';
-import Head from 'next/head';
-import {useRouter} from 'next/router';
-import {memo} from 'react';
+import { Helmet } from 'react-helmet-async';
+import { ReactNode, memo } from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface PageProps {
+  children?: ReactNode;
   title: string;
   description: string;
 }
 
-const Page: NextPage<PageProps> = memo(({children, title, description}) => {
-  const {asPath: pathname} = useRouter();
-
+const Page = memo(({children, title, description}:PageProps) => {
+  const {pathname} = useLocation();
+  
   return (
     <>
-      <Head>
+      <Helmet>
         <title>{title}</title>
         <meta content={description} name="description" />
 
@@ -33,7 +33,7 @@ const Page: NextPage<PageProps> = memo(({children, title, description}) => {
         {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
         <meta content={title} name="twitter:title" />
         <meta content={description} name="twitter:description" />
-      </Head>
+      </Helmet>
       {children}
     </>
   );

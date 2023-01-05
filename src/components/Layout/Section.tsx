@@ -1,10 +1,17 @@
 import classNames from 'classnames';
-import {FC, memo} from 'react';
+import {ReactNode, memo} from 'react';
 
-import {SectionId} from '../../data/data';
+import {SectionIdProps} from '../../data/data';
 
-const Section: FC<{sectionId: SectionId; sectionTitle?: string; noPadding?: boolean; className?: string}> = memo(
-  ({children, sectionId, noPadding = false, className}) => {
+interface SectionProps {
+  children?: ReactNode;
+  sectionId: SectionIdProps;
+  sectionTitle?: string;
+  noPadding?: boolean;
+  className?: string;
+}
+
+const Section = memo(({children, sectionId, noPadding = false, className}:SectionProps) => {
     return (
       <section className={classNames(className, {'px-4 py-16 md:py-24 lg:px-8': !noPadding})} id={sectionId}>
         <div className={classNames({'mx-auto max-w-screen-lg': !noPadding})}>{children}</div>

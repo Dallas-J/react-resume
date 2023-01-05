@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HelmetProvider } from 'react-helmet-async';
+
+import About from './components/Sections/About';
+import Contact from './components/Sections/Contact';
+import Footer from './components/Sections/Footer';
+//import Header from './components/Sections/Header';
+import Hero from './components/Sections/Hero';
+//import Page from './components/Layout/Page';
+import Portfolio from './components/Sections/Portfolio';
+import Resume from './components/Sections/Resume';
+import Testimonials from './components/Sections/Testimonials';
 
 function App() {
+  //const title = 'React Resume Template';
+  //const description = "Example site built with Tim Baker's react resume template";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HelmetProvider>
+      {/*<Page description={description} title={title}>*/}
+        {/*<Header />*/}
+        <Hero />
+        <About />
+        <Resume />
+        <Portfolio />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      {/*</Page>*/}
+    </HelmetProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import {ExternalLinkIcon} from '@heroicons/react/outline';
+import {ArrowTopRightOnSquareIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, memo, MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
 
@@ -32,7 +32,8 @@ const Portfolio: FC = memo(() => {
                 <div
                   className={classNames(
                     'relative h-max w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl',
-                  )}>
+                  )}
+                >
                   <img alt={title} src={imageUrl} />
                   <ItemOverlay item={item} />
                 </div>
@@ -81,10 +82,11 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
       href={url}
       onClick={handleItemClick}
       ref={linkRef}
-      target="_blank">
+      target='_blank'
+      rel='noreferrer'>
       <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
       <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
-      <ExternalLinkIcon className="absolute bottom-2 right-2 h-4 w-4 text-white" />
+      <ArrowTopRightOnSquareIcon className="absolute bottom-2 right-2 h-4 w-4 text-white" />
     </a>
   );
 });

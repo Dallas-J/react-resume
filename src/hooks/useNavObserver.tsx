@@ -1,9 +1,9 @@
 import {useEffect} from 'react';
 
 import {headerID} from '../components/Sections/Header';
-import {SectionId} from '../data/data';
+import {SectionIdProps} from '../data/data';
 
-export const useNavObserver = (selectors: string, handler: (section: SectionId | null) => void) => {
+export const useNavObserver = (selectors: string, handler: (section: SectionIdProps | null) => void) => {
   useEffect(() => {
     // Get all sections
     const headings = document.querySelectorAll(selectors);
@@ -28,7 +28,7 @@ export const useNavObserver = (selectors: string, handler: (section: SectionId |
             };
             if (decision.isIntersecting) {
               // Header at 30% from the top, update to current header
-              handler(decision.id as SectionId);
+              handler(decision.id as SectionIdProps);
             } else if (
               !decision.isIntersecting &&
               decision.currentRatio < 1 &&
@@ -36,7 +36,7 @@ export const useNavObserver = (selectors: string, handler: (section: SectionId |
               decision.belowToc
             ) {
               const currentVisible = headingsArray[decision.currentIndex - 1]?.getAttribute('id');
-              handler(currentVisible as SectionId);
+              handler(currentVisible as SectionIdProps);
             }
           }
         });

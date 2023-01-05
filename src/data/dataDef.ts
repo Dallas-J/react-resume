@@ -1,4 +1,3 @@
-import {StaticImageData} from 'next/image';
 import {FC, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
@@ -86,7 +85,7 @@ export interface PortfolioItem {
 /**
  * Resume section
  */
-export interface TimelineItem {
+export interface TimelineItemProps {
   date: string;
   location: string;
   title: string;
@@ -97,11 +96,11 @@ export interface TimelineItem {
  * Testimonial section
  */
 export interface TestimonialSection {
-  imageSrc?: string | StaticImageData;
-  testimonials: Testimonial[];
+  imageSrc?: string;
+  testimonials: TestimonialProps[];
 }
 
-export interface Testimonial {
+export interface TestimonialProps {
   image?: string;
   name: string;
   text: string;
@@ -127,10 +126,10 @@ export const ContactType = {
   Instagram: 'Instagram',
 } as const;
 
-export type ContactType = typeof ContactType[keyof typeof ContactType];
+export type ContactTypeProps = typeof ContactType[keyof typeof ContactType];
 
 export interface ContactItem {
-  type: ContactType;
+  type: ContactTypeProps;
   text: string;
   href?: string;
 }

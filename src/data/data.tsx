@@ -1,12 +1,12 @@
 import {
   AcademicCapIcon,
   CalendarIcon,
-  DownloadIcon,
+  ArrowDownTrayIcon,
   FlagIcon,
   MapIcon,
-  OfficeBuildingIcon,
+  BuildingOfficeIcon,
   SparklesIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
@@ -26,7 +26,7 @@ import {
   SkillGroup,
   Social,
   TestimonialSection,
-  TimelineItem,
+  TimelineItemProps,
 } from './dataDef';
 
 /**
@@ -57,14 +57,14 @@ export const SectionId = {
   Testimonials: 'testimonials',
 } as const;
 
-export type SectionId = typeof SectionId[keyof typeof SectionId];
+export type SectionIdProps = typeof SectionId[keyof typeof SectionId];
 
 /**
  * Hero section
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `I'm Not Tim Baker.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
@@ -84,7 +84,7 @@ export const heroData: Hero = {
       href: '/assets/resume.pdf',
       text: 'Resume',
       primary: true,
-      Icon: DownloadIcon,
+      Icon: ArrowDownTrayIcon,
     },
     {
       href: `#${SectionId.Contact}`,
@@ -108,7 +108,7 @@ export const aboutData: About = {
     {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
     {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
     {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
+    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOfficeIcon},
   ],
 };
 
@@ -201,7 +201,7 @@ export const portfolioItems: PortfolioItem[] = [
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
-export const education: TimelineItem[] = [
+export const education: TimelineItemProps[] = [
   {
     date: 'April 2007',
     location: 'Clown college',
@@ -216,7 +216,7 @@ export const education: TimelineItem[] = [
   },
 ];
 
-export const experience: TimelineItem[] = [
+export const experience: TimelineItemProps[] = [
   {
     date: 'March 2010 - Present',
     location: 'Awesome Development Company',
