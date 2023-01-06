@@ -70,7 +70,7 @@ export const heroData: Hero = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a <strong className="text-stone-100">Software Engineer</strong> who works 
-        at <strong className="text-stone-100">Amazon</strong> and is hard at work building out our thriving portfolio of 
+        at <strong className="text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
         Echo devices. I love C++ and Javascript, and constantly persue robust, malleable, and scalable software architecture paradigms.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
