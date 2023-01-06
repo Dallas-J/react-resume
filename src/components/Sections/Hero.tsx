@@ -20,7 +20,7 @@ const Hero = memo(() => {
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-screen-lg px-0 sm:px-4 md:px-2 lg:px-3 xl:px-4 pt-16 sm:pt-[72px] sm:pb-4">
+        <div className="max-w-screen-lg px-0 sm:px-4 pt-16 sm:pt-[72px] sm:pb-4">
           <div className="flex flex-col items-center gap-y-6 sm:rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
             {description}
