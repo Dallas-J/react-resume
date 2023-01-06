@@ -1,7 +1,6 @@
 import {Dialog, Transition} from '@headlessui/react';
 import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {Link} from 'react-router-dom';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 import { HashLink } from 'react-router-hash-link';
 

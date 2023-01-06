@@ -8,6 +8,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
+import Pdf from '../assets/Resume.pdf';
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -33,14 +34,14 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Tim Baker',
+  title: 'Dallas Johnson',
   description: ``,
   ogImageUrl: ``,
   twitterCardType: 'summary_large',
-  twitterSite: `@timbakerx`,
-  twitterCreator: `@timbakerx`,
-  twitterDomain: `reactresume.com`,
-  twitterUrl: `https://reactresume.com`,
+  twitterSite: ``,
+  twitterCreator: ``,
+  twitterDomain: `dallas-j.com`,
+  twitterUrl: `https://dallas-j.com`,
 };
 
 /**
@@ -64,24 +65,25 @@ export type SectionIdProps = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Not Tim Baker.`,
+  name: `Hi, I'm Dallas!`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a <strong className="text-stone-100">Software Engineer</strong> who works 
+        at <strong className="text-stone-100">Amazon</strong> and is hard at work building out our thriving portfolio of 
+        Echo devices. I love C++ and Javascript, and constantly persue robust, malleable, and scalable software architecture paradigms.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        After hours, you'll catch me working on VR games using <strong className="text-stone-100">Unreal 5</strong>,
+        reading whatever book has recently caught my attention (recent favorites include <strong className="text-stone-100">Atomic Habits</strong> and 
+        the <strong className="text-stone-100">Steve Jobs</strong> biography), or using <strong className="text-stone-100">Fusion 360</strong> together
+        with my 3D printer and CNC router to complete my DIY home projects.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: Pdf,
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -103,14 +105,66 @@ export const aboutData: About = {
   to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
   in.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOfficeIcon},
+    {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
+    {label: 'Age', text: '26', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'American', Icon: FlagIcon},
+    {label: 'Interests', text: 'Electronics, VR, CAD/CAM', Icon: SparklesIcon},
+    {label: 'Study', text: 'University of California, Irvine', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Amazon.com LLC', Icon: BuildingOfficeIcon},
   ],
 };
+
+/**
+ * Resume section -- TODO: Standardize resume contact format or offer MDX
+ */
+export const education: TimelineItemProps[] = [
+  {
+    date: 'December 2018',
+    location: 'University of California, Irvine',
+    title: 'B.S. in Computer Science and Engineering',
+    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+  },
+];
+
+export const experience: TimelineItemProps[] = [
+  {
+    date: 'January 2020 - Present',
+    location: 'Amazon.com',
+    title: 'Software Development Engineer II',
+    content: (
+      <ul style={{ listStyle: 'disc' }}>
+        <li>Allowed Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
+        <li>Designed privacy state recovery features that restores privacy state after internal failures, (TODO redundant revise) preventing 32K monthly privacy state failures.</li>
+        <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
+        <li>Printed debug boards TODO</li>
+        <li>Improved onboarding TODO</li>
+        <li>Maintained developer desktops TODO</li>
+      </ul>
+    ),
+  },
+  {
+    date: 'January 2019 - January 2020',
+    location: 'Amazon.com',
+    title: 'Software Development Engineer',
+    content: (
+      <ul style={{ listStyle: 'disc' }}>
+        <li>Analyzed technology options for data storage and computation, changing product direction and achieving a 25X cost reduction.</li>
+        <li>Designed a robust hardware capacity management system utilizing AWS Lambda, DynamoDB, CloudFormation, and S3. Saved Amazon over $1M annually and scaled to support over 1000 teams for automatic capacity scaling.</li>
+      </ul>
+    ),
+  },
+  {
+    date: 'April 2017 - September 2018',
+    location: 'Ardent Academy',
+    title: 'App Developer & Instructor',
+    content: (
+      <ul style={{ listStyle: 'disc' }}>
+        <li>Developed class scheduling app using React Native and GraphQL backend, serving a student population of about 200.</li>
+        <li>Established curriculum for a React Native app development course. Instructed classes of 15 - 20 students aged 10-16.</li>
+      </ul>
+    ),
+  },
+];
 
 /**
  * Skills section
@@ -124,11 +178,7 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
-      },
-      {
-        name: 'Spanish',
+        name: 'German',
         level: 3,
       },
     ],
@@ -138,15 +188,15 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'React',
-        level: 9,
-      },
-      {
-        name: 'Typescript',
         level: 7,
       },
       {
+        name: 'Typescript',
+        level: 5,
+      },
+      {
         name: 'GraphQL',
-        level: 6,
+        level: 4,
       },
     ],
   },
@@ -154,16 +204,16 @@ export const skills: SkillGroup[] = [
     name: 'Backend development',
     skills: [
       {
-        name: 'Node.js',
+        name: 'C++',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Java',
+        level: 7,
       },
       {
-        name: 'Golang',
-        level: 4,
+        name: 'Python',
+        level: 5,
       },
     ],
   },
@@ -172,15 +222,7 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
+        level: 8,
       },
     ],
   },
@@ -193,51 +235,8 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Project title',
     description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
+    url: '',
     imageUrl: 'https://source.unsplash.com/random/',
-  },
-];
-
-/**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
-export const education: TimelineItemProps[] = [
-  {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-];
-
-export const experience: TimelineItemProps[] = [
-  {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-  {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
   },
 ];
 
@@ -275,23 +274,23 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'dallasajohnson14@gmail.com',
+      href: 'mailto:dallasajohnson14@gmail.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Irvine CA, United States',
+      href: 'https://www.google.com/maps/place/Irvine,+CA/@33.6866448,-117.8434281,12z',
     },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
-    },
+    // {
+    //   type: ContactType.Instagram,
+    //   text: '@tbakerx',
+    //   href: 'https://www.instagram.com/tbakerx/',
+    // },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'Dallas-J',
+      href: 'https://github.com/Dallas-J',
     },
   ],
 };
@@ -300,9 +299,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/Dallas-J'},
+  //{label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/dallas-j/'},
+  //{label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
+  //{label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
 ];

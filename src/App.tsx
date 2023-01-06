@@ -14,7 +14,7 @@ function App() {
   return (
     <HelmetProvider>
       <Page title='React Resume Template'
-       description="Example site built with Tim Baker's react resume template"
+       description='Example site'
       >
         <Header />
         <Hero />
