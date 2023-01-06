@@ -1,6 +1,7 @@
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {memo} from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 import {heroData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
@@ -12,15 +13,15 @@ const Hero = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Hero}>
       <div
-        className="relative flex h-screen w-full items-center justify-center"
+        className="flex min-h-screen w-full items-center justify-center"
         style={{
           backgroundImage: `url(${imageSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
+        <div className="max-w-screen-lg px-0 sm:px-4 md:px-2 lg:px-3 xl:px-4 pt-16 sm:pt-[72px] sm:pb-4">
+          <div className="flex flex-col items-center gap-y-6 sm:rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
             {description}
             <div className="flex gap-x-4 text-neutral-100">
@@ -42,12 +43,13 @@ const Hero = memo(() => {
             </div>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
+        <div className="invisible tall:visible absolute inset-x-0 bottom-6 flex justify-center">
+          <HashLink
             className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-            href={`/#${SectionId.About}`}>
+            to={`/#${SectionId.About}`}
+            smooth>
             <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
-          </a>
+          </HashLink>
         </div>
       </div>
     </Section>

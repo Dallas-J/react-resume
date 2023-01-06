@@ -26,6 +26,7 @@ module.exports = {
       },
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},
+        tall: {raw: '(min-height: 700px)'},
       },
     },
   },
