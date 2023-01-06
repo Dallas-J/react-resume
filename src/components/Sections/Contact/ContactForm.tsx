@@ -57,12 +57,11 @@ const ContactForm: FC = memo(() => {
       />
       <textarea
         className={inputClasses}
-        maxLength={250}
+        style={{ minHeight: 160 }}
         name="message"
         onChange={onChange}
         placeholder="Message"
         required
-        rows={6}
       />
       <button
         aria-label="Submit contact form"
