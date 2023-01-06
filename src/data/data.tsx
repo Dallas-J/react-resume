@@ -71,7 +71,7 @@ export const heroData: Hero = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a <strong className="text-stone-100">Software Engineer</strong> who works 
         at <strong className="text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
-        Echo devices. I love C++ and Javascript, and constantly persue robust, malleable, and scalable software architecture paradigms.
+        Echo devices. I love C++ and Javascript, and constantly pursue robust, malleable, and scalable software architecture paradigms.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         After hours, you'll catch me working on VR games using <strong className="text-stone-100">Unreal 5</strong>,
@@ -86,12 +86,14 @@ export const heroData: Hero = {
       href: Pdf,
       text: 'Resume',
       primary: true,
+      hash: false,
       Icon: ArrowDownTrayIcon,
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
       primary: false,
+      hash: true,
     },
   ],
 };
@@ -132,7 +134,7 @@ export const experience: TimelineItemProps[] = [
     location: 'Amazon.com',
     title: 'Software Development Engineer II',
     content: (
-      <ul style={{ listStyle: 'disc' }}>
+      <ul className='ml-4' style={{ listStyle: 'disc' }}>
         <li>Allowed Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
         <li>Designed privacy state recovery features that restores privacy state after internal failures, (TODO redundant revise) preventing 32K monthly privacy state failures.</li>
         <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
@@ -147,7 +149,7 @@ export const experience: TimelineItemProps[] = [
     location: 'Amazon.com',
     title: 'Software Development Engineer',
     content: (
-      <ul style={{ listStyle: 'disc' }}>
+      <ul className='ml-4' style={{ listStyle: 'disc'}}>
         <li>Analyzed technology options for data storage and computation, changing product direction and achieving a 25X cost reduction.</li>
         <li>Designed a robust hardware capacity management system utilizing AWS Lambda, DynamoDB, CloudFormation, and S3. Saved Amazon over $1M annually and scaled to support over 1000 teams for automatic capacity scaling.</li>
       </ul>
@@ -158,7 +160,7 @@ export const experience: TimelineItemProps[] = [
     location: 'Ardent Academy',
     title: 'App Developer & Instructor',
     content: (
-      <ul style={{ listStyle: 'disc' }}>
+      <ul className='ml-4' style={{ listStyle: 'disc'}}>
         <li>Developed class scheduling app using React Native and GraphQL backend, serving a student population of about 200.</li>
         <li>Established curriculum for a React Native app development course. Instructed classes of 15 - 20 students aged 10-16.</li>
       </ul>

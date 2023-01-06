@@ -30,6 +30,7 @@ interface HeroActionItem {
   href: string;
   text: string;
   primary?: boolean;
+  hash?: boolean;
   Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 }
 
