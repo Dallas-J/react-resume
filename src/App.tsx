@@ -13,8 +13,8 @@ import Testimonials from './components/Sections/Testimonials';
 function App() {
   return (
     <HelmetProvider>
-      <Page title='React Resume Template'
-       description='Example site'
+      <Page title="Dallas Johnson's Landing"
+       description="A snapshot of Dallas's accomplishments, interests, and work life."
       >
         <Header />
         <Hero />
