@@ -124,7 +124,14 @@ export const education: TimelineItemProps[] = [
     date: 'December 2018',
     location: 'University of California, Irvine',
     title: 'B.S. in Computer Science and Engineering',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    content: (
+      <ul className='ml-4' style={{ listStyle: 'disc' }}>
+        <li>Programmed in many languages, including Python, Java, C, and C++</li>
+        <li>Designed a RISC V CPU in Verilog</li>
+        <li>Wrote a compiler for the <a className="hover:underline text-blue-600" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf">Cool programming language</a></li>
+        <li>Took an introductory course in machine learning using Python & Tensorflow</li>
+      </ul>
+    ),
   },
 ];
 
@@ -272,7 +279,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: "Send me a short email or a message on LinkedIn, and I'll try to get back to you as soon as I can!",
   items: [
     {
       type: ContactType.Email,
@@ -290,9 +297,9 @@ export const contact: ContactSection = {
     //   href: 'https://www.instagram.com/tbakerx/',
     // },
     {
-      type: ContactType.Github,
+      type: ContactType.LinkedIn,
       text: 'Dallas-J',
-      href: 'https://github.com/Dallas-J',
+      href: 'https://www.linkedin.com/in/Dallas-J',
     },
   ],
 };
