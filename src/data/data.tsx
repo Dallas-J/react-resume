@@ -128,7 +128,7 @@ export const education: TimelineItemProps[] = [
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
         <li>Programmed in many languages, including Python, Java, C, and C++</li>
         <li>Designed a RISC V CPU in Verilog</li>
-        <li>Wrote a compiler for the <a className="hover:underline text-blue-600" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf">Cool programming language</a></li>
+        <li>Wrote a compiler for the <a className="hover:underline text-blue-600" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
         <li>Took an introductory course in machine learning using Python & Tensorflow</li>
       </ul>
     ),
