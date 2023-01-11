@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { ReactNode, memo } from 'react';
 import { useLocation } from 'react-router-dom';
+import profilePic from '../../images/profilepic.jpg';
 
 interface PageProps {
   children?: ReactNode;
@@ -26,9 +27,14 @@ const Page = memo(({children, title, description}:PageProps) => {
         <link href="/site.webmanifest" rel="manifest" />
 
         {/* Open Graph : https://ogp.me/ */}
-        <meta content={title} property="og:title" />
-        <meta content={description} property="og:description" />
-        <meta content={`https://reactresume.com${pathname}`} property="og:url" />
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="profile" />
+        <meta property="og:profile:first_name" content="Dallas" />
+        <meta property="og:profile:last_name" content="Johnson" />
+        <meta property="og:profile:gender" content="male" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={`url(${profilePic})`} />
+        <meta property="og:url" content={`https://reactresume.com${pathname}`} />
 
         {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
         <meta content={title} name="twitter:title" />
