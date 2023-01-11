@@ -71,12 +71,12 @@ export const heroData: Hero = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a <strong className="text-stone-100">Software Engineer</strong> who works 
         at <strong className="text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
-        Echo devices. I love C++ and Javascript, and constantly pursue robust, malleable, and scalable software architecture paradigms.
+        Echo devices. I love <strong className="text-stone-100">C++</strong> and <strong className="text-stone-100">Javascript</strong>, and constantly pursue robust, malleable, and scalable software architecture paradigms.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         After hours, you'll catch me working on VR games using <strong className="text-stone-100">Unreal 5</strong>,
-        reading whatever book has recently caught my attention (recent favorites include <strong className="text-stone-100">Atomic Habits</strong> and 
-        the <strong className="text-stone-100">Steve Jobs</strong> biography), or using <strong className="text-stone-100">Fusion 360</strong> together
+        reading whatever book has recently caught my attention (recent favorites include Atomic Habits and 
+        the Steve Jobs biography), or using <strong className="text-stone-100">Fusion 360</strong> together
         with my 3D printer and CNC router to complete my DIY home projects.
       </p>
     </>
@@ -103,9 +103,21 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: (
+    <p>
+      <p>
+        Growing up, I was surrounded by electronic devices and always had a strong passion to tinker with them.
+        My parents made sure to get computers in my hands early, and I was soon playing around in TI BASIC during my middle
+        school geometry classes. I continued to play with code throughout high school, picking up Minecraft and learning
+        both Lua scripting inside the game (<a className="no-underline hover:underline text-blue-600" href="https://www.curseforge.com/minecraft/mc-mods/cc-tweaked" target="_blank" rel="noreferrer">check out the mod here</a>), and Java for mod development.
+      </p>
+      <p>
+        Entering college finally gave me the chance to program real-world microchips, and in the first couple years,
+        I joined a robotics club and wrote a bunch of C code to program different Arduinos for my personal projects. I now work at
+        Amazon where using my skills to work on bigger projects has been both fun and challenging.
+      </p>
+    </p>
+  ),
   aboutItems: [
     {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
     {label: 'Age', text: '26', Icon: CalendarIcon},
@@ -128,7 +140,7 @@ export const education: TimelineItemProps[] = [
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
         <li>Programmed in many languages, including Python, Java, C, and C++</li>
         <li>Designed a RISC V CPU in Verilog</li>
-        <li>Wrote a compiler for the <a className="hover:underline text-blue-600" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
+        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-600" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
         <li>Took an introductory course in machine learning using Python & Tensorflow</li>
       </ul>
     ),
@@ -143,11 +155,10 @@ export const experience: TimelineItemProps[] = [
     content: (
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
         <li>Allowed Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
-        <li>Designed privacy state recovery features that restores privacy state after internal failures, (TODO redundant revise) preventing 32K monthly privacy state failures.</li>
+        <li>Designed privacy state recovery to ensure that our signature red mute ring is shown even after software crashes, preventing 32K monthly user-facing failures.</li>
         <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
-        <li>Printed debug boards TODO</li>
-        <li>Improved onboarding TODO</li>
-        <li>Maintained developer desktops TODO</li>
+        <li>Created 3D printed debug hardware and delivered over 30 debug boards to QA teams in Sunnyvale and Chennai.</li>
+        <li>Reduced team onboarding time from three weeks to &lt;2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
       </ul>
     ),
   },
@@ -214,15 +225,15 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'C++',
-        level: 8,
+        level: 10,
       },
       {
         name: 'Java',
-        level: 7,
+        level: 9,
       },
       {
         name: 'Python',
-        level: 5,
+        level: 7,
       },
     ],
   },
