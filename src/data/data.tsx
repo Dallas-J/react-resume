@@ -269,7 +269,7 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Sam Balana',
       text: "I've always been really impressed with how Dallas is able to balance fine technical details with overarching system design.  Every time we work together, I end up learning something new from him.",
-      image: 'https://avatars.githubusercontent.com/u/941763?v=4',
+      image: 'https://avatars.githubusercontent.com/u/941763',
     },
     {
       name: 'Jane Doe',
