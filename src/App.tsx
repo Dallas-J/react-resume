@@ -4,8 +4,8 @@ import Footer from './components/Sections/Footer';
 import Header from './components/Sections/Header';
 import Hero from './components/Sections/Hero';
 //import Portfolio from './components/Sections/Portfolio';
-import Resume from './components/Sections/Resume';
 import Testimonials from './components/Sections/Testimonials';
+import Experience from './components/Sections/Experience';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Hero />
       <About />
-      <Resume />
+      <Experience />
       {/*<Portfolio />*/}
       <Testimonials />
       <Contact />
