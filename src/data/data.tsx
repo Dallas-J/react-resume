@@ -110,7 +110,7 @@ export const aboutData: About = {
         Growing up, I was surrounded by electronic devices and always had a strong passion to tinker with them.
         My parents made sure to get computers in my hands early, and I was soon playing around in TI BASIC during my middle
         school geometry classes. I continued to play with code throughout high school, picking up Minecraft and learning
-        both Lua scripting inside the game (<a className="no-underline hover:underline text-blue-400" href="https://www.curseforge.com/minecraft/mc-mods/cc-tweaked" target="_blank" rel="noreferrer">check out the mod here</a>), and Java for mod development.
+        both Lua scripting inside the game (<a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://www.curseforge.com/minecraft/mc-mods/cc-tweaked" target="_blank" rel="noreferrer">check out the mod here</a>), and Java for mod development.
       </p>
       <p>
         Entering college finally gave me the chance to program real-world microchips, and in the first couple years,
@@ -141,7 +141,7 @@ export const education: TimelineItemProps[] = [
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
         <li>Programmed in many languages, including Python, Java, C, and C++</li>
         <li>Designed a RISC V CPU in Verilog</li>
-        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-400" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
+        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
         <li>Took an introductory course in machine learning using Python & Tensorflow</li>
       </ul>
     ),
