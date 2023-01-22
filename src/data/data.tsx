@@ -31,6 +31,9 @@ import {
   TimelineItemProps,
 } from './dataDef';
 
+// See this github page for details: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
+export const formUrl = "https://script.google.com/macros/s/AKfycbyjfC90yO2dtuYpbeFlSMAb0Mbumcxj609oVb5oBIlOSzeF0nOdsioVXaxW-4RhkFCH/exec";
+
 /**
  * Page meta data
  */
