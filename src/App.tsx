@@ -6,6 +6,7 @@ import Hero from './components/Sections/Hero';
 //import Portfolio from './components/Sections/Portfolio';
 import Testimonials from './components/Sections/Testimonials';
 import Experience from './components/Sections/Experience';
+import { ScrollRestoration } from 'react-router-dom';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
+      <ScrollRestoration />
     </>
   );
 }
