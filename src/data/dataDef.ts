@@ -20,7 +20,6 @@ export interface HomepageMeta {
  * Hero section
  */
 export interface Hero {
-  imageSrc: string;
   name: string;
   description: JSX.Element;
   actions: HeroActionItem[];
@@ -38,7 +37,6 @@ interface HeroActionItem {
  * About section
  */
 export interface About {
-  profileImageSrc?: string;
   description: JSX.Element;
   aboutItems: AboutItem[];
 }
@@ -97,7 +95,6 @@ export interface TimelineItemProps {
  * Testimonial section
  */
 export interface TestimonialSection {
-  imageSrc?: string;
   testimonials: TestimonialProps[];
 }
 

@@ -3,6 +3,11 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'testimonial-dark': "url('/src/images/canvas-dark.webp')",
+        'hero': "url('/src/images/red-rock.webp')",
+        'profile': "url('/src/images/profile.webp')",
+      },
       keyframes: {
         typing: {
           '0%, 100%': {width: '0%'},

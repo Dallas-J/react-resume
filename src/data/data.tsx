@@ -15,9 +15,6 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import PrintablesIcon from '../components/Icon/PrintablesIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 //import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
-import profilePic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
 import {
   About,
   ContactSection,
@@ -68,7 +65,6 @@ export type SectionIdProps = typeof SectionId[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
   name: `Hi, I'm Dallas!`,
   description: (
     <>
@@ -106,7 +102,6 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilePic,
   description: (
     <p>
       <p>
@@ -268,7 +263,6 @@ export const portfolioItems: PortfolioItem[] = [
  * Testimonial section
  */
 export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
   testimonials: [
     {
       name: 'Sam Balana',

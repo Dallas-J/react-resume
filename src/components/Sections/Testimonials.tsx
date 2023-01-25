@@ -19,7 +19,7 @@ const Testimonials: FC = memo(() => {
 
   const {width} = useWindow();
 
-  const {imageSrc, testimonials} = testimonial;
+  const {testimonials} = testimonial;
 
   // Mobile iOS doesn't allow background-fixed elements
   useEffect(() => {
@@ -68,11 +68,10 @@ const Testimonials: FC = memo(() => {
     <Section noPadding sectionId={SectionId.Testimonials}>
       <div
         className={classNames(
-          'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
+          'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8 bg-neutral-700 bg-testimonial-dark',
           parallaxEnabled && 'bg-fixed',
-          {'bg-neutral-700': !imageSrc},
         )}
-        style={imageSrc ? {backgroundImage: `url(${imageSrc}`} : undefined}>
+      >
         <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
             <div
