@@ -90,14 +90,14 @@ export const heroData: Hero = {
       href: Pdf,
       text: 'Resume',
       primary: true,
-      hash: false,
+      link: true,
       Icon: ArrowDownTrayIcon,
     },
     {
-      href: `#${SectionId.Contact}`,
+      href: SectionId.Contact,
       text: 'Contact',
       primary: false,
-      hash: true,
+      link: false,
     },
   ],
 };

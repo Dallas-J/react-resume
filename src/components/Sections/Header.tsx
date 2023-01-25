@@ -124,6 +124,7 @@ const NavItem: FC<{
   inactiveClass: string;
   onClick?: () => void;
 }> = memo(({section, current, inactiveClass, activeClass}) => (
+  // Once https://github.com/w3c/csswg-drafts/issues/3744 is resolved, reimplement with smooth scrolling
   <Link to={`#${section}`} className={classNames(current ? activeClass : inactiveClass)} key={section}>
     {section}
   </Link>
