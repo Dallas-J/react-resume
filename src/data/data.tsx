@@ -266,18 +266,21 @@ export const testimonial: TestimonialSection = {
   testimonials: [
     {
       name: 'Sam Balana',
+      position: 'Software Engineer at Google',
       text: "I've always been really impressed with how Dallas is able to balance fine technical details with overarching system design.  Every time we work together, I end up learning something new from him.",
       image: 'https://avatars.githubusercontent.com/u/941763',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Kevin Omidvaran',
+      position: 'Software Development Engineer at Amazon.com',
+      text: 'TODO',
+      image: 'https://media.licdn.com/dms/image/C4E03AQH7oLal2MLbSQ/profile-displayphoto-shrink_200_200/0/1527025826521?e=1680134400&v=beta&t=o14VQGP98g_9MHFXoeNazgoKX2saWSuXHNrQaV-0sTs',
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Ryan Batten',
+      position: 'Fiancé',
+      text: "A very thorough intellectual, Dallas is genuine and has an excellent work ethic! He loves to personalize our home, affixing it with smart lights and home devices that complement our decor.",
+      image: 'https://media.licdn.com/dms/image/C5603AQH84fihsxgXyA/profile-displayphoto-shrink_200_200/0/1547534201286?e=1680134400&v=beta&t=0VF6VtQOpuuC4t38YlxYxS6iG6Sbf-KfWmnq1UBzzkc',
     },
   ],
 };

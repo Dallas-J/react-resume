@@ -101,6 +101,7 @@ export interface TestimonialSection {
 export interface TestimonialProps {
   image?: string;
   name: string;
+  position: string;
   text: string;
 }
 
