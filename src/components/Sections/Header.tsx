@@ -2,7 +2,7 @@ import {Dialog, Transition} from '@headlessui/react';
 import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import {SectionId, SectionIdProps} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
@@ -123,13 +123,11 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
-  return (
-    <HashLink smooth to={`/#${section}`} className={classNames(current ? activeClass : inactiveClass)} key={section} onClick={onClick}>
-      {section}
-    </HashLink>
-  );
-});
+}> = memo(({section, current, inactiveClass, activeClass}) => (
+  <Link to={`#${section}`} className={classNames(current ? activeClass : inactiveClass)} key={section}>
+    {section}
+  </Link>
+));
 
 Header.displayName = 'Header';
 export default Header;
