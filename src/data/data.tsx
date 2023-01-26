@@ -111,9 +111,10 @@ export const aboutData: About = {
         both Lua scripting inside the game (<a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://www.curseforge.com/minecraft/mc-mods/cc-tweaked" target="_blank" rel="noreferrer">check out the mod here</a>), and Java for mod development.
       </p>
       <p>
-        Entering college finally gave me the chance to program real-world microchips, and in the first couple years,
-        I joined a robotics club and wrote a bunch of C code to program different Arduinos for my personal projects. I now work at
-        Amazon where using my skills to work on bigger projects has been both fun and challenging.
+        College finally gave me the chance to program real-world microchips, and in the first couple years, I joined a
+        robotics club and learned how to write C code to program Arduinos and other embedded development boards for both
+        school and personal projects. I now work at Amazon where I enjoy the challenge of applying my design and programming
+        skills to projects at scale.
       </p>
     </>
   ),
@@ -294,7 +295,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: "Send me a short email or a message on LinkedIn, and I'll try to get back to you as soon as I can!",
+  description: "Send me a short email or message me on LinkedIn, and I'll try to get back to you as soon as I can!",
   items: [
     {
       type: ContactType.Email,
