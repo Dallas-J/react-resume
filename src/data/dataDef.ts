@@ -102,6 +102,7 @@ export interface TestimonialProps {
   image?: string;
   name: string;
   position: string;
+  link: string;
   text: string;
 }
 
