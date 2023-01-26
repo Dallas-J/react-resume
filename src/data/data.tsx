@@ -275,7 +275,7 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Kevin Omidvaran',
       position: 'Software Development Engineer at Amazon.com',
-      text: 'TODO',
+      text: "Dallas has a strong sense of ownership and focuses on quality when developing. He took the opportunity to 3D print debug hardware for our devices when we were unable to procure additional hardware. Dallas also has a strong curiosity: He is always striving to learn and asks important questions when necessary.",
       link: 'https://www.linkedin.com/in/komidvaran/',
       image: 'https://media.licdn.com/dms/image/C4E03AQH7oLal2MLbSQ/profile-displayphoto-shrink_200_200/0/1527025826521?e=1680134400&v=beta&t=o14VQGP98g_9MHFXoeNazgoKX2saWSuXHNrQaV-0sTs',
     },
