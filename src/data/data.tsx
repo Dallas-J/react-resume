@@ -158,7 +158,7 @@ export const experience: TimelineItemProps[] = [
         <li>Designed privacy state recovery to ensure that our signature red mute ring is shown even after software crashes, preventing 32K monthly user-facing failures.</li>
         <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
         <li>Created 3D printed debug hardware and delivered over 30 debug boards to QA teams in Sunnyvale and Chennai.</li>
-        <li>Reduced team onboarding time from three weeks to &lt;2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
+        <li>Reduced team onboarding time from three weeks to less than 2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
       </ul>
     ),
   },
