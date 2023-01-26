@@ -28,6 +28,10 @@ import {
   TimelineItemProps,
 } from './dataDef';
 
+import SamImg from '../images/sam.webp'
+import KevinImg from '../images/kevin.webp'
+import RyanImg from '../images/ryan.webp'
+
 // See this github page for details: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 export const formUrl = "https://script.google.com/macros/s/AKfycbyjfC90yO2dtuYpbeFlSMAb0Mbumcxj609oVb5oBIlOSzeF0nOdsioVXaxW-4RhkFCH/exec";
 
@@ -270,21 +274,21 @@ export const testimonial: TestimonialSection = {
       position: 'Software Engineer at Google',
       text: "I've always been really impressed with how Dallas is able to balance fine technical details with overarching system design.  Every time we work together, I end up learning something new from him.",
       link: 'https://www.linkedin.com/in/sambalana/',
-      image: 'https://avatars.githubusercontent.com/u/941763',
+      image: SamImg,
     },
     {
       name: 'Kevin Omidvaran',
       position: 'Software Development Engineer at Amazon.com',
       text: "Dallas has a strong sense of ownership and focuses on quality when developing. He took the opportunity to 3D print debug hardware for our devices when we were unable to procure additional hardware. Dallas also has a strong curiosity: He is always striving to learn and asks important questions when necessary.",
       link: 'https://www.linkedin.com/in/komidvaran/',
-      image: 'https://media.licdn.com/dms/image/C4E03AQH7oLal2MLbSQ/profile-displayphoto-shrink_200_200/0/1527025826521?e=1680134400&v=beta&t=o14VQGP98g_9MHFXoeNazgoKX2saWSuXHNrQaV-0sTs',
+      image: KevinImg,
     },
     {
       name: 'Ryan Batten',
       position: 'Fiancé',
       text: "A very thorough intellectual, Dallas is genuine and has an excellent work ethic! He loves to personalize our home, affixing it with smart lights and home devices that complement our decor.",
       link: 'https://www.linkedin.com/in/ryan-batten-rn-bsn-ccrn-02b225171/',
-      image: 'https://media.licdn.com/dms/image/C5603AQH84fihsxgXyA/profile-displayphoto-shrink_200_200/0/1547534201286?e=1680134400&v=beta&t=0VF6VtQOpuuC4t38YlxYxS6iG6Sbf-KfWmnq1UBzzkc',
+      image: RyanImg,
     },
   ],
 };
