@@ -119,7 +119,7 @@ export const aboutData: About = {
   ),
   aboutItems: [
     {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
-    {label: 'Age', text: '26', Icon: CalendarIcon},
+    {label: 'Age', text: (Math.floor((Date.now() - 828739268000) / 31557600000)).toString(), Icon: CalendarIcon},
     {label: 'Nationality', text: 'American', Icon: FlagIcon},
     {label: 'Interests', text: 'Electronics, VR, CAD/CAM', Icon: SparklesIcon},
     {label: 'Study', text: 'University of California, Irvine', Icon: AcademicCapIcon},
