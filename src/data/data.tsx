@@ -103,7 +103,7 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   description: (
-    <p>
+    <>
       <p>
         Growing up, I was surrounded by electronic devices and always had a strong passion to tinker with them.
         My parents made sure to get computers in my hands early, and I was soon playing around in TI BASIC during my middle
@@ -115,7 +115,7 @@ export const aboutData: About = {
         I joined a robotics club and wrote a bunch of C code to program different Arduinos for my personal projects. I now work at
         Amazon where using my skills to work on bigger projects has been both fun and challenging.
       </p>
-    </p>
+    </>
   ),
   aboutItems: [
     {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
