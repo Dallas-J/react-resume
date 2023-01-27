@@ -1,14 +1,71 @@
 import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useRef, useState} from 'react';
 
+import {isApple, isMobile} from '../../config';
 import {SectionId, testimonial} from '../../data/data';
 import {TestimonialProps} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
+import CanvasDark from '../../images/canvas-dark.webp';
+import CanvasLight from '../../images/canvas-light.webp';
 
 const Testimonials: FC = memo(() => {
+  const [isIos, setIsIos] = useState(false);
+
+  const {testimonials} = testimonial;
+
+  // Mobile iOS needs some special help
+  useEffect(() => {
+    setIsIos(isMobile && isApple);
+  }, []);
+
+  // If no testimonials, don't render the section
+  if (!testimonials.length) {
+    return null;
+  }
+
+  if (isIos) {
+    return (
+      <Section noPadding sectionId={SectionId.Testimonials}>
+        <div className='relative flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
+          <div
+            className='absolute top-0 left-0 w-full h-full' 
+            style={{ clip: 'rect(0, auto, auto, 0)' }}
+          >
+            <div
+              className='-z-50 fixed block top-0 left-0 w-[101%] h-screen bg-cover bg-center bg-testimonial-light-ios dark:bg-testimonial-dark-ios'
+            />
+          </div>
+          <TestimonialSection testimonials={testimonials} />
+        </div>
+      </Section>
+    );
+  }
+  
+  return (
+    <Section noPadding sectionId={SectionId.Testimonials}>
+      <div className='flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
+        <div className='fixed -z-50 top-[-50vh] left-[-50%] w-[200%] h-[200vh]'>
+          <img 
+            className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] hidden dark:block'
+            src={CanvasDark}
+            alt=''
+          />
+          <img 
+            className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] block dark:hidden'
+            src={CanvasLight}
+            alt=''
+          />
+        </div>
+        <TestimonialSection testimonials={testimonials} />
+      </div>
+    </Section>
+  );
+});
+
+const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testimonials}) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [scrollValue, setScrollValue] = useState(0);
 
@@ -16,8 +73,6 @@ const Testimonials: FC = memo(() => {
   const scrollContainer = useRef<HTMLDivElement>(null);
 
   const {width} = useWindow();
-
-  const {testimonials} = testimonial;
 
   useEffect(() => {
     itemWidth.current = scrollContainer.current ? scrollContainer.current.offsetWidth : 0;
@@ -52,54 +107,37 @@ const Testimonials: FC = memo(() => {
 
   useInterval(next, 10000);
 
-  // If no testimonials, don't render the section
-  if (!testimonials.length) {
-    return null;
-  }
-
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
-      <div className='relative flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
+    <div className="w-full max-w-screen-md px-4 lg:px-0">
+      <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
         <div
-          className='absolute top-0 left-0 w-full h-full' 
-          style={{ clip: 'rect(0, auto, auto, 0)' }}
-        >
-          <div
-            className='-z-50 fixed block top-0 left-0 w-[101%] h-screen bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark'
-          />
+          className="scrollbar-hide touch-none flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
+          onScroll={handleScroll}
+          ref={scrollContainer}>
+          {testimonials.map((testimonial, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+            );
+          })}
         </div>
-        <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
-            <div
-              className="scrollbar-hide touch-none flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
-              onScroll={handleScroll}
-              ref={scrollContainer}>
-              {testimonials.map((testimonial, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
-                );
-              })}
-            </div>
-            <div className="flex gap-x-4">
-              {[...Array(testimonials.length)].map((_, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <button
-                    className={classNames(
-                      'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
-                      isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
-                    )}
-                    disabled={isActive}
-                    key={`select-button-${index}`}
-                    onClick={setTestimonial(index)}></button>
-                );
-              })}
-            </div>
-          </div>
+        <div className="flex gap-x-4">
+          {[...Array(testimonials.length)].map((_, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <button
+                className={classNames(
+                  'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
+                  isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
+                )}
+                disabled={isActive}
+                key={`select-button-${index}`}
+                onClick={setTestimonial(index)}></button>
+            );
+          })}
         </div>
       </div>
-    </Section>
+    </div>
   );
 });
 
@@ -125,7 +163,6 @@ const Testimonial: FC<{testimonial: TestimonialProps; isActive: boolean}> = memo
         <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">— {name}, {position}</p>
       </div>
     </div>
-  ),
-);
+));
 
 export default Testimonials;
