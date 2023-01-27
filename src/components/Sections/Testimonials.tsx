@@ -103,7 +103,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
     <div className="w-full max-w-screen-md px-4 lg:px-0">
       <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
         <div
-          className="scrollbar-hide flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
+          className="scrollbar-hide flex w-full snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
           onScroll={handleScroll}
           ref={scrollContainer}>
           {testimonials.map((testimonial, index) => {
