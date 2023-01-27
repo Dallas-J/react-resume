@@ -78,8 +78,8 @@ const MobileNav: FC<{navSections: SectionIdProps[]; currentSection: SectionIdPro
 
     const baseClass =
       'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
-    const activeClass = classNames(baseClass, 'bg-neutral-900 text-white font-bold');
-    const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
+    const activeClass = classNames(baseClass, 'bg-neutral-500 dark:bg-neutral-900 text-white font-bold');
+    const inactiveClass = classNames(baseClass, 'text-neutral-800 dark:text-neutral-200 font-medium hover:bg-neutral-300 dark:hover:bg-stone-600');
     return (
       <>
         <button
@@ -100,7 +100,7 @@ const MobileNav: FC<{navSections: SectionIdProps[]; currentSection: SectionIdPro
               leave="transition-opacity ease-linear duration-300"
               leaveFrom="opacity-100"
               leaveTo="opacity-0">
-              <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+              <Dialog.Overlay className="fixed inset-0 bg-stone-400/75 dark:bg-stone-900/75" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -110,7 +110,7 @@ const MobileNav: FC<{navSections: SectionIdProps[]; currentSection: SectionIdPro
               leave="transition ease-in-out duration-300 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-800">
+              <div className="relative w-4/5 bg-stone-200 dark:bg-stone-800">
                 <nav className="mt-5 flex flex-col gap-y-2 px-2">
                   {navSections.map(section => (
                     <NavItem
