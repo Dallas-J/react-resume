@@ -59,7 +59,7 @@ const Testimonials: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
-      <div className='relative flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
+      <div className='relative flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
         <div
           className='absolute top-0 left-0 w-full h-full' 
           style={{ clip: 'rect(0, auto, auto, 0)' }}

@@ -11,7 +11,7 @@ const Hero = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-hero">
+      <div className="flex min-h-screen w-full min-w-stop items-center justify-center bg-cover bg-center bg-hero">
         <div className="max-w-screen-lg px-0 sm:px-4 pt-16 sm:pt-[72px] sm:pb-4">
           <div className="flex flex-col items-center gap-y-6 sm:rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
@@ -48,12 +48,12 @@ const Hero = memo(() => {
             </div>
           </div>
         </div>
-        <div className="invisible tall:visible absolute inset-x-0 bottom-6 flex justify-center">
+        <div className="invisible tall:visible absolute min-w-stop inset-x-0 bottom-6 flex justify-center">
           <div
             className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2 hover:cursor-pointer"
             onClick={() => document.getElementById(SectionId.About)?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
+            <ChevronDownIcon className="h-8 w-8 bg-transparent sm:h-6 sm:w-6" />
           </div>
         </div>
       </div>

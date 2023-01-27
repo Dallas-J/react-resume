@@ -4,6 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
   theme: {
     extend: {
+      minWidth: {
+        'stop': '320px',
+      },
       backgroundImage: {
         'testimonial-light': "url('/src/images/canvas-light.webp')",
         'testimonial-dark': "url('/src/images/canvas-dark.webp')",
