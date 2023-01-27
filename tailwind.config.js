@@ -10,8 +10,6 @@ module.exports = {
       backgroundImage: {
         'testimonial-light': "url('/src/images/canvas-light.webp')",
         'testimonial-dark': "url('/src/images/canvas-dark.webp')",
-        'testimonial-light-ios': "url('/src/images/canvas-light-ios.webp')",
-        'testimonial-dark-ios': "url('/src/images/canvas-dark-ios.webp')",
         'hero': "url('/src/images/red-rock.webp')",
         'profile': "url('/src/images/profile.webp')",
       },

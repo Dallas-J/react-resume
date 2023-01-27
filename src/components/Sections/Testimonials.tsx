@@ -16,7 +16,7 @@ const Testimonials: FC = memo(() => {
 
   const {testimonials} = testimonial;
 
-  // Mobile iOS needs some special help
+  // iOS moves elements improperly when rubberbanding, so it requires a less fancy approach
   useEffect(() => {
     setIsIos(isMobile && isApple);
   }, []);
@@ -29,15 +29,7 @@ const Testimonials: FC = memo(() => {
   if (isIos) {
     return (
       <Section noPadding sectionId={SectionId.Testimonials}>
-        <div className='relative flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
-          <div
-            className='absolute top-0 left-0 w-full h-full' 
-            style={{ clip: 'rect(0, auto, auto, 0)' }}
-          >
-            <div
-              className='-z-50 fixed block top-0 left-0 w-[101%] h-screen bg-cover bg-center bg-testimonial-light-ios dark:bg-testimonial-dark-ios'
-            />
-          </div>
+        <div className='flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8 bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark'>
           <TestimonialSection testimonials={testimonials} />
         </div>
       </Section>
@@ -111,7 +103,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
     <div className="w-full max-w-screen-md px-4 lg:px-0">
       <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
         <div
-          className="scrollbar-hide touch-none flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
+          className="scrollbar-hide flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
           onScroll={handleScroll}
           ref={scrollContainer}>
           {testimonials.map((testimonial, index) => {
