@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useRef, useState} from 'react';
 
+import {isApple, isMobile} from '../../config';
 import {SectionId, testimonial} from '../../data/data';
 import {TestimonialProps} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
@@ -13,6 +14,7 @@ import CanvasLight from '../../images/canvas-light.webp';
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [scrollValue, setScrollValue] = useState(0);
+  const [isIos, setIsIos] = useState(false);
 
   const itemWidth = useRef(0);
   const scrollContainer = useRef<HTMLDivElement>(null);
@@ -20,6 +22,11 @@ const Testimonials: FC = memo(() => {
   const {width} = useWindow();
 
   const {testimonials} = testimonial;
+
+  // Mobile iOS needs some special help
+  useEffect(() => {
+    setIsIos(!(isMobile && isApple));
+  }, []);
 
   useEffect(() => {
     itemWidth.current = scrollContainer.current ? scrollContainer.current.offsetWidth : 0;
@@ -62,7 +69,10 @@ const Testimonials: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
       <div className='flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
-        <div className='fixed -z-50 top-[-50vh] left-[-50%] w-[200%] h-[200vh]'>
+        <div 
+          className='fixed -z-50 top-[-50vh] left-[-50%] w-[200%] h-[200vh]'
+          style={isIos ? { clip: 'rect(0, auto, auto, 0)' } : {}}
+        >
           <img 
             className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] hidden dark:block'
             src={CanvasDark}
