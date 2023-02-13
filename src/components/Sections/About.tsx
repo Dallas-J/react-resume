@@ -9,12 +9,12 @@ const About = memo(() => {
     <Section className="bg-neutral-100 dark:bg-neutral-800" sectionId={SectionId.About}>
       <div className='grid grid-cols-1 gap-y-4 md:grid-cols-4'>
         <div className="col-span-1 flex justify-center md:justify-start">
-          <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32 bg-cover bg-center bg-profile"/>
+          <div className="h-24 w-24 rounded-xl md:h-32 md:w-32 bg-cover bg-center bg-profile border-2 border-orange-400"/>
         </div>
         <div className='col-span-1 flex flex-col gap-y-6 md:col-span-3'>
           <div className="flex flex-col gap-y-2">
             <h2 className="text-2xl font-bold text-black dark:text-white">About me</h2>
-            <div className="prose prose-sm sm:prose-base text-gray-800 dark:text-gray-300">{description}</div>
+            <div className="prose-sm sm:prose-base text-gray-800 dark:text-gray-300">{description}</div>
           </div>
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {aboutItems.map(({label, text, Icon}, idx) => (
