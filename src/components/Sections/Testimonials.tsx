@@ -38,7 +38,7 @@ const Testimonials: FC = memo(() => {
   
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
-      <div className='flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
+      <div className='flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
         <div className='fixed -z-50 top-[-50vh] left-[-50%] w-[200%] h-[200vh]'>
           <img 
             className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] hidden dark:block'
