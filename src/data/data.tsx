@@ -185,7 +185,7 @@ export const experience: TimelineItemProps[] = [
     content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
         <li>Developed class scheduling app using React Native and GraphQL backend, serving a student population of about 200.</li>
-        <li>Established curriculum for a React Native app development course. Instructed classes of 15 - 20 students aged 10-16.</li>
+        <li>Established curriculum for a React Native app development course. Instructed classes of 15-20 students aged 10-16.</li>
       </ul>
     ,
   },
