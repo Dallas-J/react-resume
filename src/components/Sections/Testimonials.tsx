@@ -37,7 +37,7 @@ const Testimonials: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
       <div className='flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
-        <div className='fixed -z-50 top-0 left-0 w-full h-screen bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark' />
+        <div className='fixed -z-50 top-0 left-0 w-full h-[130%] bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark' />
         <TestimonialSection testimonials={testimonials} />
       </div>
     </Section>
