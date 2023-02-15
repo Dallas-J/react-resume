@@ -137,15 +137,14 @@ export const aboutData: About = {
  */
 export const education: TimelineItemProps[] = [
   {
-    date: 'December 2018',
-    location: 'University of California, Irvine',
-    title: 'B.S. in Computer Science and Engineering',
+    date: 'Dec 2018',
+    company: 'University of California, Irvine',
+    title: 'BS in Computer Science and Engineering',
     content: (
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
-        <li>Programmed in many languages, including Python, Java, C, and C++</li>
-        <li>Designed a RISC V CPU in Verilog</li>
-        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a></li>
-        <li>Took an introductory course in machine learning using Python & Tensorflow</li>
+        <li>Designed a RISC-V CPU in Verilog.</li>
+        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a>.</li>
+        <li>Additional coursework in C, C++, Java, Python, and Tensorflow.</li>
       </ul>
     ),
   },
@@ -153,40 +152,52 @@ export const education: TimelineItemProps[] = [
 
 export const experience: TimelineItemProps[] = [
   {
-    date: 'January 2020 - Present',
-    location: 'Amazon.com',
+    date: 'Jan 2020 - Present',
+    company: 'Amazon.com',
+    team: 'Echo Devices',
     title: 'Software Development Engineer II',
-    content: (
+    content:
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
-        <li>Allowed Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
-        <li>Designed privacy state recovery to ensure that our signature red mute ring is shown even after software crashes, preventing 32K monthly user-facing failures.</li>
+        <li>Reduced team onboarding time from three weeks to less than 2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
+        <li>Enabled Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
+        <li>Designed privacy state recovery to ensure that the red mute ring maintains visibility even after software crashes, preventing 32K monthly user-facing failures.</li>
         <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
         <li>Created 3D printed debug hardware and delivered over 30 debug boards to QA teams in Sunnyvale and Chennai.</li>
-        <li>Reduced team onboarding time from three weeks to less than 2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
       </ul>
-    ),
+    ,
   },
   {
-    date: 'January 2019 - January 2020',
-    location: 'Amazon.com',
-    title: 'Software Development Engineer',
-    content: (
+    date: 'Jan 2019 - Jan 2020',
+    company: 'Amazon.com',
+    team: 'eCommerce Efficiency',
+    title: 'Software Development Engineer I',
+    content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
         <li>Analyzed technology options for data storage and computation, changing product direction and achieving a 25X cost reduction.</li>
         <li>Designed a robust hardware capacity management system utilizing AWS Lambda, DynamoDB, CloudFormation, and S3. Saved Amazon over $1M annually and scaled to support over 1000 teams for automatic capacity scaling.</li>
       </ul>
-    ),
+    ,
   },
   {
-    date: 'April 2017 - September 2018',
-    location: 'Ardent Academy',
+    date: 'Apr 2017 - Sep 2018',
+    company: 'Ardent Academy',
     title: 'App Developer & Instructor',
-    content: (
+    content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
         <li>Developed class scheduling app using React Native and GraphQL backend, serving a student population of about 200.</li>
         <li>Established curriculum for a React Native app development course. Instructed classes of 15 - 20 students aged 10-16.</li>
       </ul>
-    ),
+    ,
+  },
+  {
+    date: 'Sep 2014 - Sep 2016',
+    company: 'LT Associates',
+    title: 'Information Technology Specialist',
+    content:
+      <ul className='ml-4' style={{ listStyle: 'disc'}}>
+        <li>Maintained and upgraded computer hardware, software, and server infrastructure for a 50 person company.</li>
+      </ul>
+    ,
   },
 ];
 
