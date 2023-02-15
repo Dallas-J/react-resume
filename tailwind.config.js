@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       minWidth: {
-        'stop': '320px',
+        'stop': '450px',
       },
       backgroundImage: {
         'testimonial-light': "url('/src/images/canvas-light.webp')",
