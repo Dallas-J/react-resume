@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       minWidth: {
-        'stop': '450px',
+        stop: '450px',
       },
       backgroundImage: {
         'testimonial-light': "url('/src/images/canvas-light.webp')",
@@ -37,6 +37,7 @@ module.exports = {
       screens: {
         touch: {raw: 'only screen and (pointer: coarse)'},
         tall: {raw: '(min-height: 700px)'},
+        stop: '450px',
       },
     },
   },
