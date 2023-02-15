@@ -8,8 +8,6 @@ import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
-import CanvasDark from '../../images/canvas-dark.webp';
-import CanvasLight from '../../images/canvas-light.webp';
 
 const Testimonials: FC = memo(() => {
   const [isIos, setIsIos] = useState(false);
@@ -39,18 +37,7 @@ const Testimonials: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
       <div className='flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
-        <div className='fixed -z-50 top-[-50vh] left-[-50%] w-[200%] h-[200vh]'>
-          <img 
-            className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] hidden dark:block'
-            src={CanvasDark}
-            alt=''
-          />
-          <img 
-            className='absolute top-0 left-0 right-0 bottom-0 m-auto min-w-[50%] min-h-[50vh] block dark:hidden'
-            src={CanvasLight}
-            alt=''
-          />
-        </div>
+        <div className='fixed -z-50 top-0 left-0 w-full h-screen bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark' />
         <TestimonialSection testimonials={testimonials} />
       </div>
     </Section>
