@@ -179,12 +179,23 @@ export const experience: TimelineItemProps[] = [
     ,
   },
   {
-    date: 'Apr 2017 - Sep 2018',
+    date: 'Jun 2018 - Sep 2018',
+    company: 'Amazon.com',
+    team: 'eCommerce Efficiency',
+    title: 'SDE Intern',
+    content:
+      <ul className='ml-4' style={{ listStyle: 'disc'}}>
+      <li>Redesigned and implemented a custom DynamoDB scanner with cost savings of over $70,000 annually.</li>
+      </ul>
+    ,
+  },
+  {
+    date: 'May 2017 - June 2018',
     company: 'Ardent Academy',
     title: 'App Developer & Instructor',
     content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
-        <li>Developed class scheduling app using React Native and GraphQL backend, serving a student population of about 200.</li>
+        <li>Developed class scheduling app using React Native and GraphQL backend, serving around 200 students.</li>
         <li>Established curriculum for a React Native app development course. Instructed classes of 15-20 students aged 10-16.</li>
       </ul>
     ,
