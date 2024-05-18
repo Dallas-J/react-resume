@@ -88,7 +88,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
 
   return (
     <div className="w-full max-w-screen-md px-4 lg:px-0">
-      <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
+      <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-300/70 dark:bg-gray-800/40 p-6 backdrop-blur shadow-lg">
         <div
           className="scrollbar-hide flex w-full snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
           onScroll={handleScroll}
@@ -106,7 +106,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
             return (
               <button
                 className={classNames(
-                  'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
+                  'h-3 w-3 rounded-full bg-gray-800 dark:bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
                   isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
                 )}
                 disabled={isActive}
@@ -129,17 +129,17 @@ const Testimonial: FC<{testimonial: TestimonialProps; isActive: boolean}> = memo
       )}>
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-          <QuoteIcon className="absolute -top-2 -left-2 h-4 w-4 stroke-black text-white" />
+          <QuoteIcon className="absolute -top-2 -left-2 h-4 w-4 stroke-black text-black dark:text-white" />
           <a href={link} target='_blank' rel='noreferrer'>
             <img className="h-full w-full rounded-full" src={image} alt="Referrer headshot" />
           </a>
         </div>
       ) : (
-        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
+        <QuoteIcon className="h-5 w-5 shrink-0 text-black dark:text-white sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
-        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
-        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">— {name}, {position}</p>
+        <p className="prose prose-sm font-medium italic text-stone-800 dark:text-white sm:prose-base">{text}</p>
+        <p className="text-xs italic text-black dark:text-white sm:text-sm md:text-base lg:text-lg">— {name}, {position}</p>
       </div>
     </div>
 ));

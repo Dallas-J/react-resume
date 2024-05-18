@@ -72,15 +72,15 @@ export const heroData: Hero = {
   name: `Hi, I'm Dallas!`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a <strong className="text-stone-100">Software Engineer</strong> who works 
-        at <strong className="text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
-        Echo devices. I love <strong className="text-stone-100">C++</strong> and <strong className="text-stone-100">Javascript</strong>, and constantly pursue robust, malleable, and scalable software architecture paradigms.
+      <p className="prose-sm text-stone-800 dark:text-stone-200 sm:prose-base lg:prose-lg">
+        I'm a <strong className="text-stone-900 dark:text-stone-100">Software Engineer</strong> who works 
+        at <strong className="text-stone-900 dark:text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
+        Echo devices. I love <strong className="text-stone-900 dark:text-stone-100">C++</strong> and <strong className="text-stone-900 dark:text-stone-100">Javascript</strong>, and constantly pursue robust, malleable, and scalable software architecture paradigms.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        After hours, you'll catch me working on VR games using <strong className="text-stone-100">Unreal 5</strong>,
+      <p className="prose-sm text-stone-800 dark:text-stone-200 sm:prose-base lg:prose-lg">
+        After hours, you'll catch me working on VR games using <strong className="text-stone-900 dark:text-stone-100">Unreal 5</strong>,
         reading whatever book has recently caught my attention (recent favorites include Atomic Habits and 
-        the Steve Jobs biography), or using <strong className="text-stone-100">Fusion 360</strong> together
+        the Steve Jobs biography), or using <strong className="text-stone-900 dark:text-stone-100">Fusion 360</strong> together
         with my 3D printer and CNC router to complete my DIY home projects.
       </p>
     </>
