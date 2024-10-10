@@ -8,7 +8,7 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-import Pdf from '../assets/Resume.pdf';
+import Resume from "%PUBLIC_URL%/Dallas Johnson's Resume.docx";
 import GithubIcon from '../components/Icon/GithubIcon';
 //import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -87,7 +87,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: Pdf,
+      href: Resume,
       text: 'Resume',
       primary: true,
       link: true,
