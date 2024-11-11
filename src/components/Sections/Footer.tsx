@@ -9,7 +9,7 @@ const Footer: FC = memo(() => (
     <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
       <div
         className="rounded-full bg-neutral-400 dark:bg-neutral-100 p-1 ring-orange-600 ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2 hover:cursor-pointer"
-        onClick={() => document.getElementById(SectionId.Hero)?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={() => document.getElementById(SectionId.About)?.scrollIntoView({ behavior: 'smooth' })}
       >
         <ChevronUpIcon className="h-8 w-8 bg-transparent text-white dark:text-black" />
       </div>

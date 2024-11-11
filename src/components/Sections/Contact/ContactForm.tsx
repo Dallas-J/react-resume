@@ -75,7 +75,7 @@ const ContactForm: FC = memo(() => {
   );
 
   const inputClasses =
-    'bg-neutral-200 dark:bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-800 dark:text-neutral-200 text-sm';
+    'bg-neutral-200 dark:bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-500 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-800 dark:text-neutral-200 text-sm';
 
   return (
     <form ref={emailForm} className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
@@ -106,7 +106,7 @@ const ContactForm: FC = memo(() => {
       />
       <button
         aria-label="Submit contact form"
-        className="w-max rounded-full border-2 border-orange-600 bg-orange-600 dark:bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-600 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
+        className="w-max rounded-full border-2 border-orange-500 bg-orange-500 dark:bg-neutral-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-orange-400 hover:border-orange-400 dark:hover:bg-neutral-800 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-stone-800"
         type="submit">
         Send Message
       </button>

@@ -17,28 +17,20 @@ export interface HomepageMeta {
 }
 
 /**
- * Hero section
- */
-export interface Hero {
-  name: string;
-  description: JSX.Element;
-  actions: HeroActionItem[];
-}
-
-interface HeroActionItem {
-  href: string;
-  text: string;
-  primary?: boolean;
-  link?: boolean;
-  Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
-}
-
-/**
  * About section
  */
 export interface About {
   description: JSX.Element;
   aboutItems: AboutItem[];
+  actions: AboutActionItem[];
+}
+
+interface AboutActionItem {
+  href: string;
+  text: string;
+  primary?: boolean;
+  link?: boolean;
+  Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 }
 
 export interface AboutItem {
@@ -59,16 +51,9 @@ export interface Stat {
 /**
  * Skills section
  */
-
-export interface Skill {
-  name: string;
-  level: number;
-  max?: number;
-}
-
 export interface SkillGroup {
   name: string;
-  skills: Skill[];
+  skills: string[];
 }
 
 /**

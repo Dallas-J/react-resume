@@ -1,8 +1,6 @@
 import {
   AcademicCapIcon,
-  CalendarIcon,
   ArrowDownTrayIcon,
-  FlagIcon,
   MapIcon,
   BuildingOfficeIcon,
   SparklesIcon,
@@ -18,7 +16,6 @@ import {
   About,
   ContactSection,
   ContactType,
-  Hero,
   HomepageMeta,
   PortfolioItem,
   SkillGroup,
@@ -52,7 +49,6 @@ export const homePageMeta: HomepageMeta = {
  * Section definition
  */
 export const SectionId = {
-  Hero: 'hero',
   About: 'about',
   Contact: 'contact',
   Portfolio: 'portfolio',
@@ -63,43 +59,6 @@ export const SectionId = {
 } as const;
 
 export type SectionIdProps = typeof SectionId[keyof typeof SectionId];
-
-/**
- * Hero section
- */
-export const heroData: Hero = {
-  name: `Hi, I'm Dallas!`,
-  description: (
-    <>
-      <p className="prose-sm text-stone-800 dark:text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a <strong className="text-stone-900 dark:text-stone-100">Software Engineer</strong> who works 
-        at <strong className="text-stone-900 dark:text-stone-100">Amazon</strong> and am hard at work building out our thriving portfolio of 
-        Echo devices. I love <strong className="text-stone-900 dark:text-stone-100">C++</strong> and <strong className="text-stone-900 dark:text-stone-100">Javascript</strong>, and constantly pursue robust, malleable, and scalable software architecture paradigms.
-      </p>
-      <p className="prose-sm text-stone-800 dark:text-stone-200 sm:prose-base lg:prose-lg">
-        After hours, you'll catch me working on VR games using <strong className="text-stone-900 dark:text-stone-100">Unreal 5</strong>,
-        reading whatever book has recently caught my attention (recent favorites include Atomic Habits and 
-        the Steve Jobs biography), or using <strong className="text-stone-900 dark:text-stone-100">Fusion 360</strong> together
-        with my 3D printer and CNC router to complete my DIY home projects.
-      </p>
-    </>
-  ),
-  actions: [
-    {
-      href: process.env.PUBLIC_URL + "/Dallas Johnson's Resume.docx",
-      text: 'Resume',
-      primary: true,
-      link: true,
-      Icon: ArrowDownTrayIcon,
-    },
-    {
-      href: SectionId.Contact,
-      text: 'Contact',
-      primary: false,
-      link: false,
-    },
-  ],
-};
 
 /**
  * About section
@@ -123,11 +82,24 @@ export const aboutData: About = {
   ),
   aboutItems: [
     {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
-    {label: 'Age', text: (Math.floor((Date.now() - 828715740000) / 31557600000)).toString(), Icon: CalendarIcon},
-    {label: 'Nationality', text: 'American', Icon: FlagIcon},
-    {label: 'Interests', text: 'Electronics, VR, CAD/CAM', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of California, Irvine', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'Amazon.com LLC', Icon: BuildingOfficeIcon},
+    {label: 'Study', text: 'University of California, Irvine', Icon: AcademicCapIcon},
+    {label: 'Interests', text: 'Web Design, System Architecture', Icon: SparklesIcon},
+  ],
+  actions: [
+    {
+      href: process.env.PUBLIC_URL + "/Dallas Johnson's Resume.docx",
+      text: 'Resume',
+      primary: true,
+      link: true,
+      Icon: ArrowDownTrayIcon,
+    },
+    {
+      href: SectionId.Contact,
+      text: 'Contact',
+      primary: false,
+      link: false,
+    },
   ],
 };
 
@@ -138,12 +110,12 @@ export const education: TimelineItemProps[] = [
   {
     date: 'Dec 2018',
     company: 'University of California, Irvine',
-    title: 'BS in Computer Science and Engineering',
+    team: 'Computer Science and Engineering',
+    title: 'Bachelor of Science',
     content: (
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
-        <li>Designed a RISC-V CPU in Verilog.</li>
-        <li>Wrote a compiler for the <a className="no-underline hover:underline text-blue-600 dark:text-blue-400" href="https://web.stanford.edu/class/cs143/materials/cool-manual.pdf" target="_blank" rel="noreferrer">Cool programming language</a>.</li>
-        <li>Additional coursework in C, C++, Java, Python, and Tensorflow.</li>
+        <li><strong className='dark:text-white'>GPA:</strong> 3.84</li>
+        <li><strong className='dark:text-white'>Honors:</strong> Graduated cum laude with Dean's List all quarters. Member of Tau Beta Pi Honors Society.</li>
       </ul>
     ),
   },
@@ -153,38 +125,38 @@ export const experience: TimelineItemProps[] = [
   {
     date: 'Jan 2020 - Present',
     company: 'Amazon.com',
-    team: 'Echo Devices',
+    team: 'Devices and Services, Alexa and Connected Technologies',
     title: 'Software Development Engineer II',
     content:
       <ul className='ml-4' style={{ listStyle: 'disc' }}>
-        <li>Reduced team onboarding time from three weeks to less than 2 days through hardware preparation, documentation, and scripting of the onboarding process.</li>
-        <li>Enabled Echo devices to serve speech reminders while offline. Served 320M monthly user requests and prevented 570K monthly missed reminders.</li>
-        <li>Designed privacy state recovery to ensure that the red mute ring maintains visibility even after software crashes, preventing 32K monthly user-facing failures.</li>
-        <li>Designed agent-specific sound effects with two partner teams, and scaled for thousands of devices at Disney resorts.</li>
-        <li>Created 3D printed debug hardware and delivered over 30 debug boards to QA teams in Sunnyvale and Chennai.</li>
+        <li><strong className='dark:text-white'>React Gesture Handler Integration:</strong> Led a team of four to reimplement the <a href="https://reactnative.dev/" className='underline'>React Native</a> gesture handler library on Alexa's custom software stack. Designed and implemented swipe, long press, and drag and drop gestures to match their implementations on iOS and Android. Supports Alexa's ecosystem of over 1M third-party developers.</li>
+        <li><strong className='dark:text-white'>Engineering and Mentorship Contributions:</strong> Created and delivered 3D printed debug hardware to QA teams in Sunnyvale and Chennai. Reduced new hire onboarding time from three weeks to four hours. Improved codebase stability with integration tests using <a href="https://github.com/behave/behave" className='underline'>behave</a> and unit tests using <a href="https://github.com/google/googletest" className='underline'>gtest</a>. Built <a href="https://aws.amazon.com/cloudwatch/" className='underline'>AWS Cloudwatch</a> dashboards with weekly review processes. Improved customer-facing feature stability by quickly root-causing and fixing issues in production, especially during oncall rotations.</li>
+        <li><strong className='dark:text-white'>Echo Offline Reminders:</strong> Designed, implemented, and tested a secure download mechanism for reminder speech files using <a href="https://cplusplus.com/" className='underline'>C++</a>. Ensured ongoing support with automated unit and integration tests, and ensured customer privacy with delete-on-expiry and delete-on-factory-reset policies. Serves over 300M monthly user requests and prevents over 600K monthly missed reminders.</li>
+        <li><strong className='dark:text-white'>Privacy State Recovery:</strong> Improved Alexa's strong privacy guarantees by restoring device privacy mode even after software crashes. Prevents over 30K user-facing failures per month.</li>
       </ul>
     ,
   },
   {
     date: 'Jan 2019 - Jan 2020',
     company: 'Amazon.com',
-    team: 'eCommerce Efficiency',
+    team: 'Amazon Worldwide Consumer, eCommerce Efficiency',
     title: 'Software Development Engineer I',
     content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
-        <li>Analyzed technology options for data storage and computation, changing product direction and achieving a 25X cost reduction.</li>
-        <li>Designed a robust hardware capacity management system utilizing AWS Lambda, DynamoDB, CloudFormation, and S3. Saved Amazon over $1M annually and scaled to support over 1000 teams for automatic capacity scaling.</li>
+        <li><strong className='dark:text-white'>AWS Server Capacity Scaling:</strong> Designed and implemented a robust hardware capacity management system utilizing <a href="https://aws.amazon.com/lambda/" className='underline'>AWS Lambda</a> and <a href="https://aws.amazon.com/sns/" className='underline'>AWS SNS</a> to perform real-time on-demand computation of required server capacity across Amazon. Saved Amazon over $1M annually and scaled to provide estimates of required capacity for over 80% of Amazon's server capacity.</li>
+        <li><strong className='dark:text-white'>CloudFormation Service Reimplementation:</strong> Restructured server capacity approval tooling using <a href="https://aws.amazon.com/cloudformation/" className='underline'>AWS CloudFormation</a> to define infrastructure as code (IaC). Increased developer velocity by 2 developer days per month by removing manual infrastructure maintenance.</li>
+        <li><strong className='dark:text-white'>Database Storage Optimization:</strong> Created fast prototypes for <a href="https://aws.amazon.com/dynamodb/" className='underline'>AWS DynamoDB</a>, <a href="https://aws.amazon.com/redshift/" className='underline'>AWS Redshift</a>, <a href="https://aws.amazon.com/s3/" className='underline'>AWS S3</a>, and <a href="https://www.postgresql.org/" className='underline'>PostgreSQL</a> running on <a href="https://aws.amazon.com/ec2/" className='underline'>AWS EC2</a> to analyze the cost of each option. Changed product direction, achieving a 25X cost reduction from our initial plan by convincing the team to use <a href="https://aws.amazon.com/s3/" className='underline'>AWS S3</a>.</li>
       </ul>
     ,
   },
   {
     date: 'Jun 2018 - Sep 2018',
     company: 'Amazon.com',
-    team: 'eCommerce Efficiency',
-    title: 'SDE Intern',
+    team: 'Amazon Worldwide Consumer, eCommerce Efficiency',
+    title: 'Software Development Intern',
     content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
-      <li>Redesigned and implemented a custom DynamoDB scanner with cost savings of over $70,000 annually.</li>
+      <li><strong className='dark:text-white'>Database Scanner Redesign:</strong> Designed a drop-in replacement database scanner for <a href="https://aws.amazon.com/dynamodb/" className='underline'>AWS DynamoDB</a> with cost savings of over $70,000 annually.</li>
       </ul>
     ,
   },
@@ -194,18 +166,8 @@ export const experience: TimelineItemProps[] = [
     title: 'App Developer & Instructor',
     content:
       <ul className='ml-4' style={{ listStyle: 'disc'}}>
-        <li>Developed class scheduling app using React Native and GraphQL backend, serving around 200 students.</li>
-        <li>Established curriculum for a React Native app development course. Instructed classes of 15-20 students aged 10-16.</li>
-      </ul>
-    ,
-  },
-  {
-    date: 'Sep 2014 - Sep 2016',
-    company: 'LT Associates',
-    title: 'Information Technology Specialist',
-    content:
-      <ul className='ml-4' style={{ listStyle: 'disc'}}>
-        <li>Maintained and upgraded computer hardware, software, and server infrastructure for a 50 person company.</li>
+        <li><strong className='dark:text-white'>Class Scheduling App:</strong> Designed and implemented a <a href="https://reactnative.dev/" className='underline'>React Native</a> app allowing parents and students to schedule classes. Synchronized app view and webview using a <a href="https://graphql.org/" className='underline'>GraphQL</a> backend.</li>
+        <li><strong className='dark:text-white'>App Development Curriculum:</strong> Wrote curriculum, including weekly presentations, sample applications, and assignment grading criteria for a 12-week <a href="https://reactnative.dev/" className='underline'>React Native</a> app development course. Instructed classes of 15-20 students.</li>
       </ul>
     ,
   },
@@ -216,59 +178,37 @@ export const experience: TimelineItemProps[] = [
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Programming Languages and Frameworks',
     skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'German',
-        level: 3,
-      },
+      'C++',
+      'Java',
+      'Python',
+      'Javascript',
+      'Bash',
+      'SWIG',
+      'Behave',
+      'gtest',
+      'React',
     ],
   },
   {
-    name: 'Frontend development',
+    name: 'IaC and Cloud Compute',
     skills: [
-      {
-        name: 'React',
-        level: 7,
-      },
-      {
-        name: 'Typescript',
-        level: 5,
-      },
-      {
-        name: 'GraphQL',
-        level: 4,
-      },
+      'Terraform',
+      'AWS CloudFormation',
+      'AWS Lambda',
+      'AWS S3',
+      'AWS EC2',
     ],
   },
   {
-    name: 'Backend development',
+    name: 'Databases and Monitoring',
     skills: [
-      {
-        name: 'C++',
-        level: 10,
-      },
-      {
-        name: 'Java',
-        level: 9,
-      },
-      {
-        name: 'Python',
-        level: 7,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 8,
-      },
+      'AWS DynamoDB',
+      'AWS Redshift',
+      'SQL Server',
+      'PostgreSQL',
+      'AWS Cloudwatch',
     ],
   },
 ];

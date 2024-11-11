@@ -23,21 +23,10 @@ const Testimonials: FC = memo(() => {
   if (!testimonials.length) {
     return null;
   }
-
-  if (isIos) {
-    return (
-      <Section noPadding sectionId={SectionId.Testimonials}>
-        <div className='flex w-full items-center justify-center px-4 py-16 md:py-24 lg:px-8 bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark'>
-          <TestimonialSection testimonials={testimonials} />
-        </div>
-      </Section>
-    );
-  }
   
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
-      <div className='flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8'>
-        <div className='fixed -z-50 top-0 left-0 w-full h-[120%] stop:h-screen bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark' />
+      <div className='flex w-full min-w-stop items-center justify-center px-4 py-16 md:py-24 lg:px-8 bg-fixed bg-cover bg-center bg-testimonial-light dark:bg-testimonial-dark'>
         <TestimonialSection testimonials={testimonials} />
       </div>
     </Section>
@@ -88,7 +77,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
 
   return (
     <div className="w-full max-w-screen-md px-4 lg:px-0">
-      <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-300/70 dark:bg-gray-800/40 p-6 backdrop-blur shadow-lg">
+      <div className="flex flex-col items-center gap-y-6 rounded-xl bg-neutral-300/70 dark:bg-neutral-800/60 p-6 backdrop-blur shadow-lg">
         <div
           className="scrollbar-hide flex w-full snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
           onScroll={handleScroll}
@@ -106,7 +95,7 @@ const TestimonialSection: FC<{testimonials: TestimonialProps[]}> = memo(({testim
             return (
               <button
                 className={classNames(
-                  'h-3 w-3 rounded-full bg-gray-800 dark:bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
+                  'h-3 w-3 rounded-full bg-black dark:bg-neutral-200 transition-all duration-500 sm:h-4 sm:w-4',
                   isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
                 )}
                 disabled={isActive}
@@ -138,7 +127,7 @@ const Testimonial: FC<{testimonial: TestimonialProps; isActive: boolean}> = memo
         <QuoteIcon className="h-5 w-5 shrink-0 text-black dark:text-white sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
-        <p className="prose prose-sm font-medium italic text-stone-800 dark:text-white sm:prose-base">{text}</p>
+        <p className="prose prose-sm font-medium italic text-black dark:text-gray-200 sm:prose-base">{text}</p>
         <p className="text-xs italic text-black dark:text-white sm:text-sm md:text-base lg:text-lg">— {name}, {position}</p>
       </div>
     </div>

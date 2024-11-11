@@ -1,5 +1,5 @@
 import {Dialog, Transition} from '@headlessui/react';
-import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import {Bars3BottomLeftIcon} from '@heroicons/react/24/outline';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
@@ -35,99 +35,34 @@ const Header: FC = memo(() => {
   };
 
   return (
-    <>
-      <MobileNav currentSection={currentSection} navSections={navSections} />
-      <DesktopNav currentSection={currentSection} navSections={navSections} isDark={isDark} persistDark={persistDark} />
-    </>
+    <DesktopNav currentSection={currentSection} navSections={navSections} isDark={isDark} persistDark={persistDark} />
   );
 });
 
 const DesktopNav: FC<{navSections: SectionIdProps[]; currentSection: SectionIdProps | null; isDark: boolean; persistDark: Function}> = memo(
   ({navSections, currentSection, isDark, persistDark}) => {
     const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-600 dark:sm:hover:text-orange-500 text-neutral-100';
-    const activeClass = classNames(baseClass, 'text-orange-600 dark:text-orange-500');
-    const inactiveClass = classNames(baseClass, 'text-neutral-900 dark:text-neutral-100');
+      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 hover:text-orange-500 dark:hover:text-orange-500';
+    const activeClass = classNames(baseClass, 'text-orange-500');
+    const inactiveClass = classNames(baseClass, 'text-black dark:text-neutral-100');
     return (
-      <header className="flex-row justify-between fixed top-0 z-50 hidden w-full bg-gray-300/60 dark:bg-gray-800/40 p-4 backdrop-blur sm:flex" id={headerID}>
-        <div className='h-8 w-8' />
-        <nav className="flex justify-center gap-x-8">
-          {navSections.map(section => (
-            <NavItem
-              activeClass={activeClass}
-              current={section === currentSection}
-              inactiveClass={inactiveClass}
-              key={section}
-              section={section}
-            />
-          ))}
-        </nav>
-        <DarkModeToggle isDark={isDark} onClick={() => persistDark(!isDark)}/>
+      <header className="flex flex-row items-center justify-between fixed top-0 z-50 w-full bg-neutral-300/60 dark:bg-neutral-900/40 p-4 backdrop-blur" id={headerID}>
+        <div className='text-2xl font-bold text-black dark:text-white pl-4'>Dallas's Landing</div>
+        <div className="flex flex-row items-center">
+          <nav className="hidden md:flex justify-center gap-x-8 px-8">
+            {navSections.map(section => (
+              <NavItem
+                activeClass={activeClass}
+                current={section === currentSection}
+                inactiveClass={inactiveClass}
+                key={section}
+                section={section}
+              />
+            ))}
+          </nav>
+          <DarkModeToggle isDark={isDark} onClick={() => persistDark(!isDark)}/>
+        </div>
       </header>
-    );
-  },
-);
-
-const MobileNav: FC<{navSections: SectionIdProps[]; currentSection: SectionIdProps | null}> = memo(
-  ({navSections, currentSection}) => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const toggleOpen = useCallback(() => {
-      setIsOpen(!isOpen);
-    }, [isOpen]);
-
-    const baseClass =
-      'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500';
-    const activeClass = classNames(baseClass, 'bg-neutral-500 dark:bg-neutral-900 text-neutral-900 dark:text-white font-bold');
-    const inactiveClass = classNames(baseClass, 'text-neutral-800 dark:text-neutral-200 font-medium hover:bg-neutral-300 dark:hover:bg-stone-600');
-    return (
-      <>
-        <button
-          aria-label="Menu Button"
-          className="fixed top-2 right-2 z-40 rounded-md bg-orange-500 p-2 ring-offset-gray-800/60 hover:bg-orange-400 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 sm:hidden"
-          onClick={toggleOpen}
-        >
-          <Bars3BottomRightIcon className="h-8 w-8 text-neutral-900 dark:text-neutral-100" />
-          <span className="sr-only">Open sidebar</span>
-        </button>
-        <Transition.Root as={Fragment} show={isOpen}>
-          <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
-            <Transition.Child
-              as={Fragment}
-              enter="transition-opacity ease-linear duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity ease-linear duration-300"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0">
-              <Dialog.Overlay className="fixed inset-0 bg-stone-400/75 dark:bg-stone-900/75" />
-            </Transition.Child>
-            <Transition.Child
-              as={Fragment}
-              enter="transition ease-in-out duration-300 transform"
-              enterFrom="-translate-x-full"
-              enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
-              leaveFrom="translate-x-0"
-              leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-200 dark:bg-stone-800">
-                <nav className="mt-5 flex flex-col gap-y-2 px-2">
-                  {navSections.map(section => (
-                    <NavItem
-                      activeClass={activeClass}
-                      current={section === currentSection}
-                      inactiveClass={inactiveClass}
-                      key={section}
-                      onClick={toggleOpen}
-                      section={section}
-                    />
-                  ))}
-                </nav>
-              </div>
-            </Transition.Child>
-          </Dialog>
-        </Transition.Root>
-      </>
     );
   },
 );
@@ -150,7 +85,7 @@ const DarkModeToggle: FC<{
   isDark: boolean;
   onClick: () => void;
 }> = memo(({className, isDark, onClick}) => (
-  <button className='rounded-lg hover:transition-colors hover:duration-300 focus:outline-none text-neutral-900 dark:text-neutral-100 hover:text-orange-600 dark:hover:text-orange-500' onClick={onClick}>
+  <button className='rounded-lg hover:transition-colors hover:duration-300 focus:outline-none text-neutral-900 dark:text-neutral-100 hover:text-orange-500 dark:hover:text-orange-500' onClick={onClick}>
     {isDark ?
     <MoonIcon className={classNames("h-8 w-8", className)} />
     :

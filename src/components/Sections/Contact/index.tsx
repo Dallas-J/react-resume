@@ -37,7 +37,7 @@ const Contact: FC = memo(() => {
             <ContactForm />
           </div>
           <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
-            <p className="prose leading-6 text-gray-800 dark:text-gray-300">{description}</p>
+            <p className="prose leading-6 text-black dark:text-gray-200">{description}</p>
             <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">
               {items.map(({type, text, href}) => {
                 const {Icon, srLabel} = ContactValueMap[type];
@@ -47,7 +47,7 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-gray-800 dark:text-gray-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                          '-m-2 flex rounded-md p-2 text-black dark:text-gray-200 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
                           {'hover:underline hover:text-blue-600 dark:hover:text-blue-400': href},
                         )}
                         href={href}
