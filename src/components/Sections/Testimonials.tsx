@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useRef, useState} from 'react';
 
-import {isApple, isMobile} from '../../config';
 import {SectionId, testimonial} from '../../data/data';
 import {TestimonialProps} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
@@ -10,14 +9,7 @@ import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
 
 const Testimonials: FC = memo(() => {
-  const [isIos, setIsIos] = useState(false);
-
   const {testimonials} = testimonial;
-
-  // iOS moves elements improperly when rubberbanding, so it requires a less fancy approach
-  useEffect(() => {
-    setIsIos(isMobile && isApple);
-  }, []);
 
   // If no testimonials, don't render the section
   if (!testimonials.length) {

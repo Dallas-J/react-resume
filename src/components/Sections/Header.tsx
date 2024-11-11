@@ -1,8 +1,6 @@
-import {Dialog, Transition} from '@headlessui/react';
-import {Bars3BottomLeftIcon} from '@heroicons/react/24/outline';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
-import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import {FC, memo, useCallback, useMemo, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import {SectionId, SectionIdProps} from '../../data/data';
